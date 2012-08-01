@@ -51,7 +51,7 @@ org.mariotaku.twidere.extension.timescape.ExtensionReceiver: ExtensionReceiver()
 org.mariotaku.twidere.extension.timescape.ExtensionSettingsActivity
 org.mariotaku.twidere.extension.timescape.ExtensionSettingsActivity: ExtensionSettingsActivity()
 org.mariotaku.twidere.extension.timescape.ExtensionSettingsActivity: void onClick(android.view.View)
-org.mariotaku.twidere.extension.timescape.R$drawable: int icon_plugin
+org.mariotaku.twidere.extension.timescape.R$drawable: int ic_extension
 org.mariotaku.twidere.extension.timescape.R$drawable: int icon_source
 org.mariotaku.twidere.extension.timescape.R$id: int add_account
 org.mariotaku.twidere.extension.timescape.R$layout: int main

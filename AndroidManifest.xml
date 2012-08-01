@@ -29,7 +29,7 @@
 
 	<application
 		android:name="ExtensionApplication"
-		android:icon="@drawable/icon_plugin"
+		android:icon="@drawable/ic_extension"
 		android:label="@string/app_name">
 		<uses-library android:name="com.sonyericsson.eventstream_1"/>
 

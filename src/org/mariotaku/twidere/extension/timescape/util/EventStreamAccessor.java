@@ -124,7 +124,7 @@ public class EventStreamAccessor implements Constants {
 			final String configName = new ComponentName(context.getPackageName(),
 					ExtensionSettingsActivity.class.getName()).flattenToShortString();
 			final Builder iconUriBuilder = new Uri.Builder().scheme(ContentResolver.SCHEME_ANDROID_RESOURCE)
-					.authority(context.getPackageName()).appendPath(Integer.toString(R.drawable.icon_plugin));
+					.authority(context.getPackageName()).appendPath(Integer.toString(R.drawable.ic_extension));
 
 			final ContentValues cv = new ContentValues();
 			cv.put(PluginColumns.API_VERSION, 1);

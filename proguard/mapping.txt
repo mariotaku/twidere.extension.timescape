@@ -1094,19 +1094,20 @@ org.mariotaku.twidere.extension.timescape.util.Utils -> org.mariotaku.twidere.ex
     long[] getSelectedIdsInPreferences(android.content.Context) -> a
 org.mariotaku.twidere.model.ParcelableDirectMessage -> org.mariotaku.twidere.model.ParcelableDirectMessage:
     android.os.Parcelable$Creator CREATOR -> CREATOR
-    long account_id -> a
-    long message_id -> b
-    long message_timestamp -> c
-    long sender_id -> d
-    long recipient_id -> e
-    boolean is_gap -> f
-    java.lang.String text -> g
-    java.lang.String sender_name -> h
-    java.lang.String recipient_name -> i
-    java.lang.String sender_screen_name -> j
-    java.lang.String recipient_screen_name -> k
-    java.net.URL sender_profile_image_url -> l
-    java.net.URL recipient_profile_image_url -> m
+    java.util.Comparator MESSAGE_ID_COMPARATOR -> a
+    long account_id -> b
+    long message_id -> c
+    long message_timestamp -> d
+    long sender_id -> e
+    long recipient_id -> f
+    boolean is_gap -> g
+    java.lang.String text -> h
+    java.lang.String sender_name -> i
+    java.lang.String recipient_name -> j
+    java.lang.String sender_screen_name -> k
+    java.lang.String recipient_screen_name -> l
+    java.net.URL sender_profile_image_url -> m
+    java.net.URL recipient_profile_image_url -> n
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
@@ -1115,6 +1116,9 @@ org.mariotaku.twidere.model.ParcelableDirectMessage$1 -> org.mariotaku.twidere.m
     org.mariotaku.twidere.model.ParcelableDirectMessage[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
+org.mariotaku.twidere.model.ParcelableDirectMessage$2 -> org.mariotaku.twidere.model.b:
+    int compare(org.mariotaku.twidere.model.ParcelableDirectMessage,org.mariotaku.twidere.model.ParcelableDirectMessage) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.model.ParcelableLocation -> org.mariotaku.twidere.model.ParcelableLocation:
     double latitude -> a
     double longitude -> b
@@ -1123,7 +1127,7 @@ org.mariotaku.twidere.model.ParcelableLocation -> org.mariotaku.twidere.model.Pa
     boolean isValid() -> a
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableLocation$1 -> org.mariotaku.twidere.model.b:
+org.mariotaku.twidere.model.ParcelableLocation$1 -> org.mariotaku.twidere.model.c:
     org.mariotaku.twidere.model.ParcelableUserList createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableUserList[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
@@ -1142,30 +1146,39 @@ org.mariotaku.twidere.model.ParcelableStatus -> org.mariotaku.twidere.model.Parc
     boolean is_retweet -> j
     boolean is_favorite -> k
     boolean is_protected -> l
-    boolean has_media -> m
-    java.lang.String retweeted_by_name -> n
-    java.lang.String retweeted_by_screen_name -> o
-    java.lang.String text_html -> p
-    java.lang.String text_plain -> q
-    java.lang.String name -> r
-    java.lang.String screen_name -> s
-    java.lang.String in_reply_to_screen_name -> t
-    java.lang.String source -> u
-    java.lang.String profile_image_url_string -> v
-    java.lang.String image_preview_url_string -> w
-    java.lang.String location_string -> x
-    org.mariotaku.twidere.model.ParcelableLocation location -> y
-    android.text.Spanned text -> z
-    java.net.URL profile_image_url -> A
-    java.net.URL image_preview_url -> B
+    boolean is_verified -> m
+    boolean has_media -> n
+    java.lang.String retweeted_by_name -> o
+    java.lang.String retweeted_by_screen_name -> p
+    java.lang.String text_html -> q
+    java.lang.String text_plain -> r
+    java.lang.String name -> s
+    java.lang.String screen_name -> t
+    java.lang.String in_reply_to_screen_name -> u
+    java.lang.String source -> v
+    java.lang.String profile_image_url_string -> w
+    java.lang.String image_preview_url_string -> x
+    java.lang.String location_string -> y
+    org.mariotaku.twidere.model.ParcelableLocation location -> z
+    android.text.Spanned text -> A
+    java.net.URL profile_image_url -> B
+    java.net.URL image_preview_url -> C
+    java.util.Comparator TIMESTAMP_COMPARATOR -> D
+    java.util.Comparator STATUS_ID_COMPARATOR -> E
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableStatus$1 -> org.mariotaku.twidere.model.c:
+org.mariotaku.twidere.model.ParcelableStatus$1 -> org.mariotaku.twidere.model.d:
     org.mariotaku.twidere.model.ParcelableStatus createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableStatus[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
+org.mariotaku.twidere.model.ParcelableStatus$2 -> org.mariotaku.twidere.model.e:
+    int compare(org.mariotaku.twidere.model.ParcelableStatus,org.mariotaku.twidere.model.ParcelableStatus) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
+org.mariotaku.twidere.model.ParcelableStatus$3 -> org.mariotaku.twidere.model.f:
+    int compare(org.mariotaku.twidere.model.ParcelableStatus,org.mariotaku.twidere.model.ParcelableStatus) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.model.ParcelableUser -> org.mariotaku.twidere.model.ParcelableUser:
     android.os.Parcelable$Creator CREATOR -> CREATOR
     long account_id -> a
@@ -1173,20 +1186,25 @@ org.mariotaku.twidere.model.ParcelableUser -> org.mariotaku.twidere.model.Parcel
     long created_at -> c
     long position -> d
     boolean is_protected -> e
-    java.lang.String description -> f
-    java.lang.String name -> g
-    java.lang.String screen_name -> h
-    java.lang.String location -> i
-    java.lang.String profile_image_url_string -> j
-    java.net.URL profile_image_url -> k
+    boolean is_verified -> f
+    java.lang.String description -> g
+    java.lang.String name -> h
+    java.lang.String screen_name -> i
+    java.lang.String location -> j
+    java.lang.String profile_image_url_string -> k
+    java.net.URL profile_image_url -> l
+    java.util.Comparator POSITION_COMPARATOR -> m
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableUser$1 -> org.mariotaku.twidere.model.d:
+org.mariotaku.twidere.model.ParcelableUser$1 -> org.mariotaku.twidere.model.g:
     org.mariotaku.twidere.model.ParcelableUser createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableUser[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
+org.mariotaku.twidere.model.ParcelableUser$2 -> org.mariotaku.twidere.model.h:
+    int compare(org.mariotaku.twidere.model.ParcelableUser,org.mariotaku.twidere.model.ParcelableUser) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.model.ParcelableUserList -> org.mariotaku.twidere.model.ParcelableUserList:
     android.os.Parcelable$Creator CREATOR -> CREATOR
     int list_id -> a
@@ -1201,14 +1219,18 @@ org.mariotaku.twidere.model.ParcelableUserList -> org.mariotaku.twidere.model.Pa
     java.lang.String user_name -> j
     java.lang.String user_profile_image_url_string -> k
     java.net.URL user_profile_image_url -> l
+    java.util.Comparator POSITION_COMPARATOR -> m
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableUserList$1 -> org.mariotaku.twidere.model.e:
+org.mariotaku.twidere.model.ParcelableUserList$1 -> org.mariotaku.twidere.model.i:
     org.mariotaku.twidere.model.ParcelableUserList createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableUserList[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
+org.mariotaku.twidere.model.ParcelableUserList$2 -> org.mariotaku.twidere.model.j:
+    int compare(org.mariotaku.twidere.model.ParcelableUserList,org.mariotaku.twidere.model.ParcelableUserList) -> a
+    int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.provider.TweetStore -> org.mariotaku.twidere.a.a:
     android.net.Uri[] STATUSES_URIS -> a
     android.net.Uri NULL_CONTENT_URI -> b

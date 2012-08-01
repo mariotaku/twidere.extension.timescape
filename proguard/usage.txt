@@ -702,8 +702,8 @@ org.mariotaku.twidere.extension.timescape.util.Utils:
     8:8:public Utils()
 org.mariotaku.twidere.model.ComposingStatus
 org.mariotaku.twidere.model.ParcelableLocation:
-    23:26:public ParcelableLocation(android.os.Parcel)
-    66:66:public static boolean isValidLocation(org.mariotaku.twidere.model.ParcelableLocation)
+    42:45:public ParcelableLocation(android.os.Parcel)
+    85:85:public static boolean isValidLocation(org.mariotaku.twidere.model.ParcelableLocation)
 org.mariotaku.twidere.provider.TweetStore:
     public static final java.lang.String AUTHORITY
     private static final java.lang.String TYPE_PRIMARY_KEY
@@ -772,6 +772,7 @@ org.mariotaku.twidere.provider.TweetStore$Statuses:
     public static final java.lang.String IN_REPLY_TO_SCREEN_NAME
     public static final java.lang.String SOURCE
     public static final java.lang.String IS_PROTECTED
+    public static final java.lang.String IS_VERIFIED
     public static final java.lang.String RETWEET_ID
     public static final java.lang.String RETWEETED_BY_ID
     public static final java.lang.String RETWEETED_BY_NAME
