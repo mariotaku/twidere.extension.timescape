@@ -1158,13 +1158,14 @@ org.mariotaku.twidere.model.ParcelableStatus -> org.mariotaku.twidere.model.Parc
     java.lang.String source -> v
     java.lang.String profile_image_url_string -> w
     java.lang.String image_preview_url_string -> x
-    java.lang.String location_string -> y
-    org.mariotaku.twidere.model.ParcelableLocation location -> z
-    android.text.Spanned text -> A
-    java.net.URL profile_image_url -> B
-    java.net.URL image_preview_url -> C
-    java.util.Comparator TIMESTAMP_COMPARATOR -> D
-    java.util.Comparator STATUS_ID_COMPARATOR -> E
+    java.lang.String image_orig_url_string -> y
+    java.lang.String location_string -> z
+    org.mariotaku.twidere.model.ParcelableLocation location -> A
+    android.text.Spanned text -> B
+    java.net.URL profile_image_url -> C
+    java.net.URL image_preview_url -> D
+    java.util.Comparator TIMESTAMP_COMPARATOR -> E
+    java.util.Comparator STATUS_ID_COMPARATOR -> F
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel

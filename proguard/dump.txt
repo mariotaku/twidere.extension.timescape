@@ -47134,7 +47134,7 @@ _____________________________________________________________________
 Interfaces (count = 1):
   + Class [android/os/Parcelable]
 
-Constant Pool (count = 183):
+Constant Pool (count = 186):
   + Class [android/os/Parcel]
   + Class [android/os/Parcelable]
   + Class [android/text/Html]
@@ -47147,12 +47147,13 @@ Constant Pool (count = 183):
   + Class [org/mariotaku/twidere/model/d]
   + Class [org/mariotaku/twidere/model/e]
   + Class [org/mariotaku/twidere/model/f]
-  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.A Landroid/text/Spanned;]
-  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.B Ljava/net/URL;]
+  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.A Lorg/mariotaku/twidere/model/ParcelableLocation;]
+  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.B Landroid/text/Spanned;]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.C Ljava/net/URL;]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.CREATOR Landroid/os/Parcelable$Creator;]
-  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.D Ljava/util/Comparator;]
+  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.D Ljava/net/URL;]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.E Ljava/util/Comparator;]
+  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.F Ljava/util/Comparator;]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.a J]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.b J]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.c J]
@@ -47178,7 +47179,7 @@ Constant Pool (count = 183):
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.w Ljava/lang/String;]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.x Ljava/lang/String;]
   + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.y Ljava/lang/String;]
-  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.z Lorg/mariotaku/twidere/model/ParcelableLocation;]
+  + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.z Ljava/lang/String;]
   + Methodref [android/os/Parcel.readInt ()I]
   + Methodref [android/os/Parcel.readLong ()J]
   + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
@@ -47196,12 +47197,13 @@ Constant Pool (count = 183):
   + Methodref [org/mariotaku/twidere/model/f.<init> ()V]
   + NameAndType [<init> ()V]
   + NameAndType [<init> (Ljava/lang/String;)V]
-  + NameAndType [A Landroid/text/Spanned;]
-  + NameAndType [B Ljava/net/URL;]
+  + NameAndType [A Lorg/mariotaku/twidere/model/ParcelableLocation;]
+  + NameAndType [B Landroid/text/Spanned;]
   + NameAndType [C Ljava/net/URL;]
   + NameAndType [CREATOR Landroid/os/Parcelable$Creator;]
-  + NameAndType [D Ljava/util/Comparator;]
+  + NameAndType [D Ljava/net/URL;]
   + NameAndType [E Ljava/util/Comparator;]
+  + NameAndType [F Ljava/util/Comparator;]
   + NameAndType [a (Ljava/lang/String;)Ljava/lang/String;]
   + NameAndType [a J]
   + NameAndType [b (Ljava/lang/String;)Ljava/net/URL;]
@@ -47237,7 +47239,7 @@ Constant Pool (count = 183):
   + NameAndType [writeString (Ljava/lang/String;)V]
   + NameAndType [x Ljava/lang/String;]
   + NameAndType [y Ljava/lang/String;]
-  + NameAndType [z Lorg/mariotaku/twidere/model/ParcelableLocation;]
+  + NameAndType [z Ljava/lang/String;]
   + Utf8 [()I]
   + Utf8 [()J]
   + Utf8 [()Ljava/lang/String;]
@@ -47259,6 +47261,7 @@ Constant Pool (count = 183):
   + Utf8 [Code]
   + Utf8 [D]
   + Utf8 [E]
+  + Utf8 [F]
   + Utf8 [J]
   + Utf8 [Landroid/os/Parcelable$Creator;]
   + Utf8 [Landroid/text/Spanned;]
@@ -47318,7 +47321,7 @@ Constant Pool (count = 183):
   + Utf8 [y]
   + Utf8 [z]
 
-Fields (count = 32):
+Fields (count = 33):
   + Field:        CREATOR Landroid/os/Parcelable$Creator;
     Access flags: 0x19
       = public static final android.os.Parcelable$Creator CREATOR
@@ -47397,24 +47400,27 @@ Fields (count = 32):
   + Field:        y Ljava/lang/String;
     Access flags: 0x11
       = public final java.lang.String y
-  + Field:        z Lorg/mariotaku/twidere/model/ParcelableLocation;
+  + Field:        z Ljava/lang/String;
     Access flags: 0x11
-      = public final org.mariotaku.twidere.model.ParcelableLocation z
-  + Field:        A Landroid/text/Spanned;
+      = public final java.lang.String z
+  + Field:        A Lorg/mariotaku/twidere/model/ParcelableLocation;
     Access flags: 0x11
-      = public final android.text.Spanned A
-  + Field:        B Ljava/net/URL;
+      = public final org.mariotaku.twidere.model.ParcelableLocation A
+  + Field:        B Landroid/text/Spanned;
     Access flags: 0x11
-      = public final java.net.URL B
+      = public final android.text.Spanned B
   + Field:        C Ljava/net/URL;
     Access flags: 0x11
       = public final java.net.URL C
-  + Field:        D Ljava/util/Comparator;
-    Access flags: 0x19
-      = public static final java.util.Comparator D
+  + Field:        D Ljava/net/URL;
+    Access flags: 0x11
+      = public final java.net.URL D
   + Field:        E Ljava/util/Comparator;
     Access flags: 0x19
       = public static final java.util.Comparator E
+  + Field:        F Ljava/util/Comparator;
+    Access flags: 0x19
+      = public static final java.util.Comparator F
 
 Methods (count = 5):
   - Method:       <clinit>()V
@@ -47425,24 +47431,24 @@ Methods (count = 5):
       [0] new #10
         + Class [org/mariotaku/twidere/model/d]
       [3] dup
-      [4] invokespecial #57
+      [4] invokespecial #58
         + Methodref [org/mariotaku/twidere/model/d.<init> ()V]
       [7] putstatic #16
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.CREATOR Landroid/os/Parcelable$Creator;]
       [10] new #11
         + Class [org/mariotaku/twidere/model/e]
       [13] dup
-      [14] invokespecial #58
+      [14] invokespecial #59
         + Methodref [org/mariotaku/twidere/model/e.<init> ()V]
-      [17] putstatic #17
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.D Ljava/util/Comparator;]
+      [17] putstatic #18
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.E Ljava/util/Comparator;]
       [20] new #12
         + Class [org/mariotaku/twidere/model/f]
       [23] dup
-      [24] invokespecial #59
+      [24] invokespecial #60
         + Methodref [org/mariotaku/twidere/model/f.<init> ()V]
-      [27] putstatic #18
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.E Ljava/util/Comparator;]
+      [27] putstatic #19
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.F Ljava/util/Comparator;]
       [30] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
@@ -47450,232 +47456,238 @@ Methods (count = 5):
     Access flags: 0x1
       = public ParcelableStatus(android.os.Parcel)
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 318, locals = 2, stack = 4):
+    + Code attribute instructions (code length = 326, locals = 2, stack = 4):
       [0] aload_0 v0
-      [1] invokespecial #52
+      [1] invokespecial #53
         + Methodref [java/lang/Object.<init> ()V]
       [4] aload_0 v0
       [5] aload_1 v1
-      [6] invokevirtual #46
+      [6] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [9] putfield #19
+      [9] putfield #20
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.a J]
       [12] aload_0 v0
       [13] aload_1 v1
-      [14] invokevirtual #46
+      [14] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [17] putfield #20
+      [17] putfield #21
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.b J]
       [20] aload_0 v0
       [21] aload_1 v1
-      [22] invokevirtual #46
+      [22] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [25] putfield #21
+      [25] putfield #22
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.c J]
       [28] aload_0 v0
       [29] aload_1 v1
-      [30] invokevirtual #46
+      [30] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [33] putfield #22
+      [33] putfield #23
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.d J]
       [36] aload_0 v0
       [37] aload_1 v1
-      [38] invokevirtual #46
+      [38] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [41] putfield #23
+      [41] putfield #24
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.e J]
       [44] aload_0 v0
       [45] aload_1 v1
-      [46] invokevirtual #46
+      [46] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [49] putfield #24
+      [49] putfield #25
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.f J]
       [52] aload_0 v0
       [53] aload_1 v1
-      [54] invokevirtual #46
+      [54] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [57] putfield #25
+      [57] putfield #26
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.g J]
       [60] aload_0 v0
       [61] aload_1 v1
-      [62] invokevirtual #46
+      [62] invokevirtual #47
         + Methodref [android/os/Parcel.readLong ()J]
-      [65] putfield #26
+      [65] putfield #27
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.h J]
       [68] aload_0 v0
       [69] aload_1 v1
-      [70] invokevirtual #45
+      [70] invokevirtual #46
         + Methodref [android/os/Parcel.readInt ()I]
       [73] iconst_1
       [74] ificmpne +7 (target=81)
       [77] iconst_1
       [78] goto +4 (target=82)
       [81] iconst_0
-      [82] putfield #27
+      [82] putfield #28
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.i Z]
       [85] aload_0 v0
       [86] aload_1 v1
-      [87] invokevirtual #45
+      [87] invokevirtual #46
         + Methodref [android/os/Parcel.readInt ()I]
       [90] iconst_1
       [91] ificmpne +7 (target=98)
       [94] iconst_1
       [95] goto +4 (target=99)
       [98] iconst_0
-      [99] putfield #28
+      [99] putfield #29
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.j Z]
       [102] aload_0 v0
       [103] aload_1 v1
-      [104] invokevirtual #45
+      [104] invokevirtual #46
         + Methodref [android/os/Parcel.readInt ()I]
       [107] iconst_1
       [108] ificmpne +7 (target=115)
       [111] iconst_1
       [112] goto +4 (target=116)
       [115] iconst_0
-      [116] putfield #29
+      [116] putfield #30
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.k Z]
       [119] aload_0 v0
       [120] aload_1 v1
-      [121] invokevirtual #45
+      [121] invokevirtual #46
         + Methodref [android/os/Parcel.readInt ()I]
       [124] iconst_1
       [125] ificmpne +7 (target=132)
       [128] iconst_1
       [129] goto +4 (target=133)
       [132] iconst_0
-      [133] putfield #30
+      [133] putfield #31
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.l Z]
       [136] aload_0 v0
       [137] aload_1 v1
-      [138] invokevirtual #45
+      [138] invokevirtual #46
         + Methodref [android/os/Parcel.readInt ()I]
       [141] iconst_1
       [142] ificmpne +7 (target=149)
       [145] iconst_1
       [146] goto +4 (target=150)
       [149] iconst_0
-      [150] putfield #31
+      [150] putfield #32
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.m Z]
       [153] aload_0 v0
       [154] aload_1 v1
-      [155] invokevirtual #45
+      [155] invokevirtual #46
         + Methodref [android/os/Parcel.readInt ()I]
       [158] iconst_1
       [159] ificmpne +7 (target=166)
       [162] iconst_1
       [163] goto +4 (target=167)
       [166] iconst_0
-      [167] putfield #32
+      [167] putfield #33
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.n Z]
       [170] aload_0 v0
       [171] aload_1 v1
-      [172] invokevirtual #47
+      [172] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [175] putfield #33
+      [175] putfield #34
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.o Ljava/lang/String;]
       [178] aload_0 v0
       [179] aload_1 v1
-      [180] invokevirtual #47
+      [180] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [183] putfield #34
+      [183] putfield #35
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.p Ljava/lang/String;]
       [186] aload_0 v0
       [187] aload_1 v1
-      [188] invokevirtual #47
+      [188] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [191] putfield #35
+      [191] putfield #36
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.q Ljava/lang/String;]
       [194] aload_0 v0
       [195] aload_1 v1
-      [196] invokevirtual #47
+      [196] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [199] putfield #36
+      [199] putfield #37
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.r Ljava/lang/String;]
       [202] aload_0 v0
       [203] aload_1 v1
-      [204] invokevirtual #47
+      [204] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [207] putfield #37
+      [207] putfield #38
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.s Ljava/lang/String;]
       [210] aload_0 v0
       [211] aload_1 v1
-      [212] invokevirtual #47
+      [212] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [215] putfield #38
+      [215] putfield #39
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.t Ljava/lang/String;]
       [218] aload_0 v0
       [219] aload_1 v1
-      [220] invokevirtual #47
+      [220] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [223] putfield #39
+      [223] putfield #40
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.u Ljava/lang/String;]
       [226] aload_0 v0
       [227] aload_1 v1
-      [228] invokevirtual #47
+      [228] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [231] putfield #40
+      [231] putfield #41
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.v Ljava/lang/String;]
       [234] aload_0 v0
       [235] aload_1 v1
-      [236] invokevirtual #47
+      [236] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [239] putfield #41
+      [239] putfield #42
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.w Ljava/lang/String;]
       [242] aload_0 v0
       [243] aload_1 v1
-      [244] invokevirtual #47
+      [244] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [247] putfield #42
+      [247] putfield #43
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.x Ljava/lang/String;]
       [250] aload_0 v0
       [251] aload_1 v1
-      [252] invokevirtual #47
+      [252] invokevirtual #48
         + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
-      [255] putfield #43
+      [255] putfield #44
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.y Ljava/lang/String;]
       [258] aload_0 v0
-      [259] new #8
+      [259] aload_1 v1
+      [260] invokevirtual #48
+        + Methodref [android/os/Parcel.readString ()Ljava/lang/String;]
+      [263] putfield #45
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.z Ljava/lang/String;]
+      [266] aload_0 v0
+      [267] new #8
         + Class [org/mariotaku/twidere/model/ParcelableLocation]
-      [262] dup
-      [263] aload_0 v0
-      [264] getfield #43
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.y Ljava/lang/String;]
-      [267] invokespecial #56
+      [270] dup
+      [271] aload_0 v0
+      [272] getfield #45
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.z Ljava/lang/String;]
+      [275] invokespecial #57
         + Methodref [org/mariotaku/twidere/model/ParcelableLocation.<init> (Ljava/lang/String;)V]
-      [270] putfield #44
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.z Lorg/mariotaku/twidere/model/ParcelableLocation;]
-      [273] aload_0 v0
-      [274] aload_0 v0
-      [275] getfield #42
+      [278] putfield #13
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.A Lorg/mariotaku/twidere/model/ParcelableLocation;]
+      [281] aload_0 v0
+      [282] aload_0 v0
+      [283] getfield #43
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.x Ljava/lang/String;]
-      [278] invokestatic #55
+      [286] invokestatic #56
         + Methodref [org/mariotaku/twidere/b/h.b (Ljava/lang/String;)Ljava/net/URL;]
-      [281] putfield #15
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.C Ljava/net/URL;]
-      [284] aload_0 v0
-      [285] aload_0 v0
-      [286] getfield #41
+      [289] putfield #17
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.D Ljava/net/URL;]
+      [292] aload_0 v0
+      [293] aload_0 v0
+      [294] getfield #42
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.w Ljava/lang/String;]
-      [289] invokestatic #55
+      [297] invokestatic #56
         + Methodref [org/mariotaku/twidere/b/h.b (Ljava/lang/String;)Ljava/net/URL;]
-      [292] putfield #14
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.B Ljava/net/URL;]
-      [295] aload_0 v0
-      [296] aload_0 v0
-      [297] getfield #35
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.q Ljava/lang/String;]
-      [300] ifnull +13 (target=313)
+      [300] putfield #15
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.C Ljava/net/URL;]
       [303] aload_0 v0
-      [304] getfield #35
+      [304] aload_0 v0
+      [305] getfield #36
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.q Ljava/lang/String;]
-      [307] invokestatic #51
+      [308] ifnull +13 (target=321)
+      [311] aload_0 v0
+      [312] getfield #36
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.q Ljava/lang/String;]
+      [315] invokestatic #52
         + Methodref [android/text/Html.fromHtml (Ljava/lang/String;)Landroid/text/Spanned;]
-      [310] goto +4 (target=314)
-      [313] aconst_null
-      [314] putfield #13
-        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.A Landroid/text/Spanned;]
-      [317] return
+      [318] goto +4 (target=322)
+      [321] aconst_null
+      [322] putfield #14
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.B Landroid/text/Spanned;]
+      [325] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
       + Stack map table attribute (count = 14):
@@ -47691,15 +47703,15 @@ Methods (count = 5):
         - [150] Var: [a:org/mariotaku/twidere/model/ParcelableStatus][a:android/os/Parcel], Stack: [a:org/mariotaku/twidere/model/ParcelableStatus][i]
         - [166] Var: ..., Stack: [a:org/mariotaku/twidere/model/ParcelableStatus]
         - [167] Var: [a:org/mariotaku/twidere/model/ParcelableStatus][a:android/os/Parcel], Stack: [a:org/mariotaku/twidere/model/ParcelableStatus][i]
-        - [313] Var: ..., Stack: [a:org/mariotaku/twidere/model/ParcelableStatus]
-        - [314] Var: [a:org/mariotaku/twidere/model/ParcelableStatus][a:android/os/Parcel], Stack: [a:org/mariotaku/twidere/model/ParcelableStatus][a:android/text/Spanned]
+        - [321] Var: ..., Stack: [a:org/mariotaku/twidere/model/ParcelableStatus]
+        - [322] Var: [a:org/mariotaku/twidere/model/ParcelableStatus][a:android/os/Parcel], Stack: [a:org/mariotaku/twidere/model/ParcelableStatus][a:android/text/Spanned]
   + Method:       describeContents()I
     Access flags: 0x1
       = public int describeContents()
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 5, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] invokevirtual #53
+      [1] invokevirtual #54
         + Methodref [java/lang/Object.hashCode ()I]
       [4] ireturn
       Code attribute exceptions (count = 0):
@@ -47710,9 +47722,9 @@ Methods (count = 5):
     Class member attributes (count = 1):
     + Code attribute instructions (code length = 8, locals = 1, stack = 1):
       [0] aload_0 v0
-      [1] getfield #35
+      [1] getfield #36
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.q Ljava/lang/String;]
-      [4] invokestatic #54
+      [4] invokestatic #55
         + Methodref [org/mariotaku/twidere/b/a.a (Ljava/lang/String;)Ljava/lang/String;]
       [7] areturn
       Code attribute exceptions (count = 0):
@@ -47721,182 +47733,188 @@ Methods (count = 5):
     Access flags: 0x1
       = public void writeToParcel(android.os.Parcel,int)
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 249, locals = 3, stack = 3):
+    + Code attribute instructions (code length = 257, locals = 3, stack = 3):
       [0] aload_1 v1
       [1] aload_0 v0
-      [2] getfield #19
+      [2] getfield #20
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.a J]
-      [5] invokevirtual #49
+      [5] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [8] aload_1 v1
       [9] aload_0 v0
-      [10] getfield #20
+      [10] getfield #21
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.b J]
-      [13] invokevirtual #49
+      [13] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [16] aload_1 v1
       [17] aload_0 v0
-      [18] getfield #21
+      [18] getfield #22
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.c J]
-      [21] invokevirtual #49
+      [21] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [24] aload_1 v1
       [25] aload_0 v0
-      [26] getfield #22
+      [26] getfield #23
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.d J]
-      [29] invokevirtual #49
+      [29] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [32] aload_1 v1
       [33] aload_0 v0
-      [34] getfield #23
+      [34] getfield #24
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.e J]
-      [37] invokevirtual #49
+      [37] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [40] aload_1 v1
       [41] aload_0 v0
-      [42] getfield #24
+      [42] getfield #25
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.f J]
-      [45] invokevirtual #49
+      [45] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [48] aload_1 v1
       [49] aload_0 v0
-      [50] getfield #25
+      [50] getfield #26
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.g J]
-      [53] invokevirtual #49
+      [53] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [56] aload_1 v1
       [57] aload_0 v0
-      [58] getfield #26
+      [58] getfield #27
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.h J]
-      [61] invokevirtual #49
+      [61] invokevirtual #50
         + Methodref [android/os/Parcel.writeLong (J)V]
       [64] aload_1 v1
       [65] aload_0 v0
-      [66] getfield #27
+      [66] getfield #28
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.i Z]
       [69] ifeq +7 (target=76)
       [72] iconst_1
       [73] goto +4 (target=77)
       [76] iconst_0
-      [77] invokevirtual #48
+      [77] invokevirtual #49
         + Methodref [android/os/Parcel.writeInt (I)V]
       [80] aload_1 v1
       [81] aload_0 v0
-      [82] getfield #28
+      [82] getfield #29
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.j Z]
       [85] ifeq +7 (target=92)
       [88] iconst_1
       [89] goto +4 (target=93)
       [92] iconst_0
-      [93] invokevirtual #48
+      [93] invokevirtual #49
         + Methodref [android/os/Parcel.writeInt (I)V]
       [96] aload_1 v1
       [97] aload_0 v0
-      [98] getfield #29
+      [98] getfield #30
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.k Z]
       [101] ifeq +7 (target=108)
       [104] iconst_1
       [105] goto +4 (target=109)
       [108] iconst_0
-      [109] invokevirtual #48
+      [109] invokevirtual #49
         + Methodref [android/os/Parcel.writeInt (I)V]
       [112] aload_1 v1
       [113] aload_0 v0
-      [114] getfield #30
+      [114] getfield #31
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.l Z]
       [117] ifeq +7 (target=124)
       [120] iconst_1
       [121] goto +4 (target=125)
       [124] iconst_0
-      [125] invokevirtual #48
+      [125] invokevirtual #49
         + Methodref [android/os/Parcel.writeInt (I)V]
       [128] aload_1 v1
       [129] aload_0 v0
-      [130] getfield #31
+      [130] getfield #32
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.m Z]
       [133] ifeq +7 (target=140)
       [136] iconst_1
       [137] goto +4 (target=141)
       [140] iconst_0
-      [141] invokevirtual #48
+      [141] invokevirtual #49
         + Methodref [android/os/Parcel.writeInt (I)V]
       [144] aload_1 v1
       [145] aload_0 v0
-      [146] getfield #32
+      [146] getfield #33
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.n Z]
       [149] ifeq +7 (target=156)
       [152] iconst_1
       [153] goto +4 (target=157)
       [156] iconst_0
-      [157] invokevirtual #48
+      [157] invokevirtual #49
         + Methodref [android/os/Parcel.writeInt (I)V]
       [160] aload_1 v1
       [161] aload_0 v0
-      [162] getfield #33
+      [162] getfield #34
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.o Ljava/lang/String;]
-      [165] invokevirtual #50
+      [165] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [168] aload_1 v1
       [169] aload_0 v0
-      [170] getfield #34
+      [170] getfield #35
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.p Ljava/lang/String;]
-      [173] invokevirtual #50
+      [173] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [176] aload_1 v1
       [177] aload_0 v0
-      [178] getfield #35
+      [178] getfield #36
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.q Ljava/lang/String;]
-      [181] invokevirtual #50
+      [181] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [184] aload_1 v1
       [185] aload_0 v0
-      [186] getfield #36
+      [186] getfield #37
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.r Ljava/lang/String;]
-      [189] invokevirtual #50
+      [189] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [192] aload_1 v1
       [193] aload_0 v0
-      [194] getfield #37
+      [194] getfield #38
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.s Ljava/lang/String;]
-      [197] invokevirtual #50
+      [197] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [200] aload_1 v1
       [201] aload_0 v0
-      [202] getfield #38
+      [202] getfield #39
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.t Ljava/lang/String;]
-      [205] invokevirtual #50
+      [205] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [208] aload_1 v1
       [209] aload_0 v0
-      [210] getfield #39
+      [210] getfield #40
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.u Ljava/lang/String;]
-      [213] invokevirtual #50
+      [213] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [216] aload_1 v1
       [217] aload_0 v0
-      [218] getfield #40
+      [218] getfield #41
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.v Ljava/lang/String;]
-      [221] invokevirtual #50
+      [221] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [224] aload_1 v1
       [225] aload_0 v0
-      [226] getfield #41
+      [226] getfield #42
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.w Ljava/lang/String;]
-      [229] invokevirtual #50
+      [229] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [232] aload_1 v1
       [233] aload_0 v0
-      [234] getfield #42
+      [234] getfield #43
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.x Ljava/lang/String;]
-      [237] invokevirtual #50
+      [237] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
       [240] aload_1 v1
       [241] aload_0 v0
-      [242] getfield #43
+      [242] getfield #44
         + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.y Ljava/lang/String;]
-      [245] invokevirtual #50
+      [245] invokevirtual #51
         + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
-      [248] return
+      [248] aload_1 v1
+      [249] aload_0 v0
+      [250] getfield #45
+        + Fieldref [org/mariotaku/twidere/model/ParcelableStatus.z Ljava/lang/String;]
+      [253] invokevirtual #51
+        + Methodref [android/os/Parcel.writeString (Ljava/lang/String;)V]
+      [256] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 1):
       + Stack map table attribute (count = 12):
