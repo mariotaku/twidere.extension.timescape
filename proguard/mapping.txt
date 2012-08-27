@@ -1041,18 +1041,36 @@ org.mariotaku.twidere.ITwidereService$Stub$Proxy -> org.mariotaku.twidere.c:
     void shutdownService() -> l
     void clearNotification(int) -> a
 org.mariotaku.twidere.extension.timescape.ExtensionApplication -> org.mariotaku.twidere.extension.timescape.ExtensionApplication:
-    org.mariotaku.twidere.extension.timescape.ExtensionApplication$LoadStatusesTask mLoadStatusesTask -> a
-    org.mariotaku.twidere.util.ServiceInterface mService -> b
+    android.os.AsyncTask mLoadStatusesTask -> a
+    android.os.AsyncTask mRefreshStatusesTask -> b
+    android.os.AsyncTask mUpdateStatusTask -> c
+    org.mariotaku.twidere.util.ServiceInterface mService -> d
     org.mariotaku.twidere.util.ServiceInterface getServiceInterface() -> a
     void loadStatuses() -> b
+    void refreshStatuses() -> c
+    void updateStatus(java.lang.String) -> a
 org.mariotaku.twidere.extension.timescape.ExtensionApplication$LoadStatusesTask -> org.mariotaku.twidere.extension.timescape.a:
     android.content.Context context -> a
     java.lang.Void doInBackground(java.lang.Void[]) -> a
     java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+org.mariotaku.twidere.extension.timescape.ExtensionApplication$RefreshStatusesTask -> org.mariotaku.twidere.extension.timescape.b:
+    org.mariotaku.twidere.util.ServiceInterface service -> a
+    android.content.Context context -> b
+    java.lang.Void doInBackground(java.lang.Void[]) -> a
+    void onPostExecute(java.lang.Void) -> a
+    void onPostExecute(java.lang.Object) -> onPostExecute
+    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+org.mariotaku.twidere.extension.timescape.ExtensionApplication$UpdateStatusTask -> org.mariotaku.twidere.extension.timescape.c:
+    org.mariotaku.twidere.util.ServiceInterface service -> a
+    android.content.Context context -> b
+    java.lang.String status -> c
+    java.lang.Void doInBackground(java.lang.Void[]) -> a
+    void onPostExecute(java.lang.Void) -> a
+    void onPostExecute(java.lang.Object) -> onPostExecute
+    java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
 org.mariotaku.twidere.extension.timescape.ExtensionReceiver -> org.mariotaku.twidere.extension.timescape.ExtensionReceiver:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
     void openStatus(android.content.Context,android.content.Intent) -> a
-    boolean tryStartService(org.mariotaku.twidere.util.ServiceInterface) -> a
 org.mariotaku.twidere.extension.timescape.ExtensionSettingsActivity -> org.mariotaku.twidere.extension.timescape.ExtensionSettingsActivity:
     android.support.v4.widget.SimpleCursorAdapter mAdapter -> m
     android.widget.ListView mListView -> n
@@ -1092,33 +1110,6 @@ org.mariotaku.twidere.extension.timescape.util.ListUtils -> org.mariotaku.twider
     java.lang.String buildString(java.util.List,char,boolean) -> a
 org.mariotaku.twidere.extension.timescape.util.Utils -> org.mariotaku.twidere.extension.timescape.b.c:
     long[] getSelectedIdsInPreferences(android.content.Context) -> a
-org.mariotaku.twidere.model.ParcelableDirectMessage -> org.mariotaku.twidere.model.ParcelableDirectMessage:
-    android.os.Parcelable$Creator CREATOR -> CREATOR
-    java.util.Comparator MESSAGE_ID_COMPARATOR -> a
-    long account_id -> b
-    long message_id -> c
-    long message_timestamp -> d
-    long sender_id -> e
-    long recipient_id -> f
-    boolean is_gap -> g
-    java.lang.String text -> h
-    java.lang.String sender_name -> i
-    java.lang.String recipient_name -> j
-    java.lang.String sender_screen_name -> k
-    java.lang.String recipient_screen_name -> l
-    java.net.URL sender_profile_image_url -> m
-    java.net.URL recipient_profile_image_url -> n
-    int describeContents() -> describeContents
-    java.lang.String toString() -> toString
-    void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableDirectMessage$1 -> org.mariotaku.twidere.model.a:
-    org.mariotaku.twidere.model.ParcelableDirectMessage createFromParcel(android.os.Parcel) -> a
-    org.mariotaku.twidere.model.ParcelableDirectMessage[] newArray(int) -> a
-    java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
-    java.lang.Object[] newArray(int) -> newArray
-org.mariotaku.twidere.model.ParcelableDirectMessage$2 -> org.mariotaku.twidere.model.b:
-    int compare(org.mariotaku.twidere.model.ParcelableDirectMessage,org.mariotaku.twidere.model.ParcelableDirectMessage) -> a
-    int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.model.ParcelableLocation -> org.mariotaku.twidere.model.ParcelableLocation:
     double latitude -> a
     double longitude -> b
@@ -1127,7 +1118,7 @@ org.mariotaku.twidere.model.ParcelableLocation -> org.mariotaku.twidere.model.Pa
     boolean isValid() -> a
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableLocation$1 -> org.mariotaku.twidere.model.c:
+org.mariotaku.twidere.model.ParcelableLocation$1 -> org.mariotaku.twidere.model.a:
     org.mariotaku.twidere.model.ParcelableUserList createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableUserList[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
@@ -1169,15 +1160,15 @@ org.mariotaku.twidere.model.ParcelableStatus -> org.mariotaku.twidere.model.Parc
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableStatus$1 -> org.mariotaku.twidere.model.d:
+org.mariotaku.twidere.model.ParcelableStatus$1 -> org.mariotaku.twidere.model.b:
     org.mariotaku.twidere.model.ParcelableStatus createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableStatus[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-org.mariotaku.twidere.model.ParcelableStatus$2 -> org.mariotaku.twidere.model.e:
+org.mariotaku.twidere.model.ParcelableStatus$2 -> org.mariotaku.twidere.model.c:
     int compare(org.mariotaku.twidere.model.ParcelableStatus,org.mariotaku.twidere.model.ParcelableStatus) -> a
     int compare(java.lang.Object,java.lang.Object) -> compare
-org.mariotaku.twidere.model.ParcelableStatus$3 -> org.mariotaku.twidere.model.f:
+org.mariotaku.twidere.model.ParcelableStatus$3 -> org.mariotaku.twidere.model.d:
     int compare(org.mariotaku.twidere.model.ParcelableStatus,org.mariotaku.twidere.model.ParcelableStatus) -> a
     int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.model.ParcelableUser -> org.mariotaku.twidere.model.ParcelableUser:
@@ -1198,12 +1189,12 @@ org.mariotaku.twidere.model.ParcelableUser -> org.mariotaku.twidere.model.Parcel
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableUser$1 -> org.mariotaku.twidere.model.g:
+org.mariotaku.twidere.model.ParcelableUser$1 -> org.mariotaku.twidere.model.e:
     org.mariotaku.twidere.model.ParcelableUser createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableUser[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-org.mariotaku.twidere.model.ParcelableUser$2 -> org.mariotaku.twidere.model.h:
+org.mariotaku.twidere.model.ParcelableUser$2 -> org.mariotaku.twidere.model.f:
     int compare(org.mariotaku.twidere.model.ParcelableUser,org.mariotaku.twidere.model.ParcelableUser) -> a
     int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.model.ParcelableUserList -> org.mariotaku.twidere.model.ParcelableUserList:
@@ -1224,12 +1215,12 @@ org.mariotaku.twidere.model.ParcelableUserList -> org.mariotaku.twidere.model.Pa
     int describeContents() -> describeContents
     java.lang.String toString() -> toString
     void writeToParcel(android.os.Parcel,int) -> writeToParcel
-org.mariotaku.twidere.model.ParcelableUserList$1 -> org.mariotaku.twidere.model.i:
+org.mariotaku.twidere.model.ParcelableUserList$1 -> org.mariotaku.twidere.model.g:
     org.mariotaku.twidere.model.ParcelableUserList createFromParcel(android.os.Parcel) -> a
     org.mariotaku.twidere.model.ParcelableUserList[] newArray(int) -> a
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
     java.lang.Object[] newArray(int) -> newArray
-org.mariotaku.twidere.model.ParcelableUserList$2 -> org.mariotaku.twidere.model.j:
+org.mariotaku.twidere.model.ParcelableUserList$2 -> org.mariotaku.twidere.model.h:
     int compare(org.mariotaku.twidere.model.ParcelableUserList,org.mariotaku.twidere.model.ParcelableUserList) -> a
     int compare(java.lang.Object,java.lang.Object) -> compare
 org.mariotaku.twidere.provider.TweetStore -> org.mariotaku.twidere.a.a:
@@ -1296,21 +1287,22 @@ org.mariotaku.twidere.util.ServiceInterface -> org.mariotaku.twidere.b.c:
     int updateProfileImage(long,android.net.Uri,boolean) -> a
     int updateStatus(long[],java.lang.String,android.location.Location,android.net.Uri,long,boolean) -> a
     int updateUserListDetails(long,int,boolean,java.lang.String,java.lang.String) -> a
+    void waitForService() -> m
     org.mariotaku.twidere.util.ServiceInterface getInstance(android.app.Application) -> a
     void access$0(org.mariotaku.twidere.util.ServiceInterface,org.mariotaku.twidere.ITwidereService) -> a
 org.mariotaku.twidere.util.ServiceInterface$1 -> org.mariotaku.twidere.b.d:
     org.mariotaku.twidere.util.ServiceInterface this$0 -> a
     void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
-org.mariotaku.twidere.util.ServiceInterface$ServiceToken -> org.mariotaku.twidere.b.e:
-    android.content.ContextWrapper wrapped_context -> a
-org.mariotaku.twidere.util.ServiceInterface$ServiceUtils -> org.mariotaku.twidere.b.f:
+org.mariotaku.twidere.util.ServiceUtils -> org.mariotaku.twidere.b.e:
     java.util.HashMap sConnectionMap -> a
-    org.mariotaku.twidere.util.ServiceInterface$ServiceToken bindToService(android.content.Context,android.content.ServiceConnection) -> a
-org.mariotaku.twidere.util.ServiceInterface$ServiceUtils$ServiceBinder -> org.mariotaku.twidere.b.g:
+    org.mariotaku.twidere.util.ServiceUtils$ServiceToken bindToService(android.content.Context,android.content.Intent,android.content.ServiceConnection) -> a
+org.mariotaku.twidere.util.ServiceUtils$ServiceBinder -> org.mariotaku.twidere.b.f:
     android.content.ServiceConnection mCallback -> a
     void onServiceConnected(android.content.ComponentName,android.os.IBinder) -> onServiceConnected
     void onServiceDisconnected(android.content.ComponentName) -> onServiceDisconnected
+org.mariotaku.twidere.util.ServiceUtils$ServiceToken -> org.mariotaku.twidere.b.g:
+    android.content.ContextWrapper wrapped_context -> a
 org.mariotaku.twidere.util.Utils -> org.mariotaku.twidere.b.h:
     double parseDouble(java.lang.String) -> a
     java.net.URL parseURL(java.lang.String) -> b

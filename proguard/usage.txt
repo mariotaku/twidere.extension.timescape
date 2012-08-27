@@ -783,8 +783,10 @@ org.mariotaku.twidere.provider.TweetStore$Statuses:
     public static final java.lang.String DEFAULT_SORT_ORDER
 org.mariotaku.twidere.util.HtmlUnescapeHelper:
     32:32:public HtmlUnescapeHelper()
-org.mariotaku.twidere.util.ServiceInterface$ServiceUtils:
-    588:588:public ServiceInterface$ServiceUtils()
-    594:594:public static org.mariotaku.twidere.util.ServiceInterface$ServiceToken bindToService(android.content.Context)
+org.mariotaku.twidere.util.ServiceInterface:
+    private static final java.lang.String TWIDERE_PACKAGE_NAME
+org.mariotaku.twidere.util.ServiceUtils:
+    14:14:public ServiceUtils()
+    20:20:public static org.mariotaku.twidere.util.ServiceUtils$ServiceToken bindToService(android.content.Context,android.content.Intent)
 org.mariotaku.twidere.util.Utils:
     29:30:private Utils()

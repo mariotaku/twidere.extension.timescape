@@ -59,8 +59,6 @@ org.mariotaku.twidere.extension.timescape.R$string: int add_account
 org.mariotaku.twidere.extension.timescape.R$string: int app_name
 org.mariotaku.twidere.extension.timescape.R$string: int plugin_name
 org.mariotaku.twidere.extension.timescape.R$string: int source_name
-org.mariotaku.twidere.model.ParcelableDirectMessage
-org.mariotaku.twidere.model.ParcelableDirectMessage: android.os.Parcelable$Creator CREATOR
 org.mariotaku.twidere.model.ParcelableLocation
 org.mariotaku.twidere.model.ParcelableLocation: android.os.Parcelable$Creator CREATOR
 org.mariotaku.twidere.model.ParcelableStatus

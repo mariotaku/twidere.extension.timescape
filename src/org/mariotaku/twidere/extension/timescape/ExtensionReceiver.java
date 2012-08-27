@@ -20,7 +20,6 @@ import org.mariotaku.twidere.Constants;
 import org.mariotaku.twidere.Twidere;
 import org.mariotaku.twidere.extension.timescape.util.EventStreamAccessor;
 import org.mariotaku.twidere.extension.timescape.util.Utils;
-import org.mariotaku.twidere.util.ServiceInterface;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -43,7 +42,6 @@ public class ExtensionReceiver extends BroadcastReceiver implements Constants {
 		final ExtensionApplication application = app_context instanceof ExtensionApplication ? (ExtensionApplication) app_context
 				: null;
 		if (application == null) return;
-		final ServiceInterface service = application.getServiceInterface();
 		final String action = intent.getAction();
 		final long[] selected_ids = Utils.getSelectedIdsInPreferences(context);
 		if (EventStreamConstants.Intents.REGISTER_PLUGINS_REQUEST_INTENT.equals(action)) {
@@ -58,22 +56,18 @@ public class ExtensionReceiver extends BroadcastReceiver implements Constants {
 			EventStreamAccessor.insertOrUpdateSource(context);
 			application.loadStatuses();
 		} else if (EventStreamConstants.Intents.REFRESH_REQUEST_INTENT.equals(action)) {
-			if (tryStartService(service)) {
-				service.getHomeTimeline(selected_ids, null);
-			}
+			application.refreshStatuses();
 		} else if (EventStreamConstants.Intents.VIEW_EVENT_INTENT.equals(action)) {
 			openStatus(context, intent);
 		} else if (EventStreamConstants.Intents.STATUS_UPDATE_INTENT.equals(action)) {
 			final String status = intent.getStringExtra(EventStreamConstants.Intents.EXTRA_STATUS_UPDATE_MESSAGE);
-			if (tryStartService(service)) {
-				service.updateStatus(selected_ids, status, null, null, -1, false);
-				EventStreamAccessor.updateStatus(context, status);
-			}
+			application.updateStatus(status);
 		} else if (Twidere.BROADCAST_HOME_TIMELINE_REFRESHED.equals(action)) {
 			application.loadStatuses();
 		}
 	}
 
+	
 	private void openStatus(Context context, Intent i) {
 		final Bundle bundle = i.getExtras();
 		if (bundle == null) return;
@@ -89,17 +83,5 @@ public class ExtensionReceiver extends BroadcastReceiver implements Constants {
 		final Intent intent = new Intent(Intent.ACTION_VIEW, builder.build());
 		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(intent);
-	}
-
-	private boolean tryStartService(ServiceInterface service) {
-		try {
-			if (service == null) return false;
-			if (service.test()) return true;
-			do
-				return true;
-			while (service.test());
-			} catch (Exception e) {
-				return false;
-		}
 	}
 }

@@ -19,9 +19,7 @@
 
 package org.mariotaku.twidere.util;
 
-import static org.mariotaku.twidere.util.ServiceInterface.ServiceUtils.bindToService;
-
-import java.util.HashMap;
+import static org.mariotaku.twidere.util.ServiceUtils.bindToService;
 
 import org.mariotaku.twidere.Constants;
 import org.mariotaku.twidere.ITwidereService;
@@ -29,14 +27,12 @@ import org.mariotaku.twidere.ITwidereService;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.location.Location;
 import android.net.Uri;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.util.Log;
 
 public final class ServiceInterface implements Constants, ITwidereService {
 
@@ -57,8 +53,12 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	private static ServiceInterface sInstance;
 
+	private static final String TWIDERE_PACKAGE_NAME = "org.mariotaku.twidere";
+
 	private ServiceInterface(Context context) {
-		bindToService(context, mConntecion);
+		final Intent intent = new Intent(INTENT_ACTION_SERVICE);
+		intent.setPackage(TWIDERE_PACKAGE_NAME);
+		bindToService(context, intent, mConntecion);
 	}
 
 	@Override
@@ -102,7 +102,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int createBlock(long account_id, long user_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.createBlock(account_id, user_id);
@@ -114,7 +113,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int createFavorite(long account_id, long status_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.createFavorite(account_id, status_id);
@@ -126,7 +124,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int createFriendship(long account_id, long user_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.createFriendship(account_id, user_id);
@@ -138,7 +135,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int createUserList(long account_id, String list_name, boolean is_public, String description) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.createUserList(account_id, list_name, is_public, description);
@@ -150,7 +146,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int createUserListSubscription(long account_id, int list_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.createUserListSubscription(account_id, list_id);
@@ -162,7 +157,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int deleteUserListMember(long account_id, int list_id, long user_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.deleteUserListMember(account_id, list_id, user_id);
@@ -174,7 +168,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyBlock(long account_id, long user_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyBlock(account_id, user_id);
@@ -186,7 +179,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyDirectMessage(long account_id, long message_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyDirectMessage(account_id, message_id);
@@ -198,7 +190,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyFavorite(long account_id, long status_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyFavorite(account_id, status_id);
@@ -210,7 +201,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyFriendship(long account_id, long user_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyFriendship(account_id, user_id);
@@ -222,7 +212,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyStatus(long account_id, long status_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyStatus(account_id, status_id);
@@ -234,7 +223,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyUserList(long account_id, int list_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyUserList(account_id, list_id);
@@ -246,7 +234,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int destroyUserListSubscription(long account_id, int list_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.destroyUserListSubscription(account_id, list_id);
@@ -258,7 +245,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getDailyTrends(long account_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getDailyTrends(account_id);
@@ -270,7 +256,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getHomeTimeline(long[] account_ids, long[] max_ids) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getHomeTimeline(account_ids, max_ids);
@@ -282,7 +267,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getLocalTrends(long account_id, int woeid) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getLocalTrends(account_id, woeid);
@@ -294,7 +278,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getMentions(long[] account_ids, long[] max_ids) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getMentions(account_ids, max_ids);
@@ -306,7 +289,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getReceivedDirectMessages(long[] account_ids, long[] max_ids) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getReceivedDirectMessages(account_ids, max_ids);
@@ -318,7 +300,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getSentDirectMessages(long[] account_ids, long[] max_ids) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getSentDirectMessages(account_ids, max_ids);
@@ -330,7 +311,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int getWeeklyTrends(long account_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.getWeeklyTrends(account_id);
@@ -342,7 +322,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean hasActivatedTask() {
-
 		if (mService == null) return false;
 		try {
 			return mService.hasActivatedTask();
@@ -354,7 +333,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isDailyTrendsRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isDailyTrendsRefreshing();
@@ -366,7 +344,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isHomeTimelineRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isHomeTimelineRefreshing();
@@ -378,7 +355,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isLocalTrendsRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isLocalTrendsRefreshing();
@@ -390,7 +366,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isMentionsRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isMentionsRefreshing();
@@ -402,7 +377,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isReceivedDirectMessagesRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isReceivedDirectMessagesRefreshing();
@@ -414,7 +388,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isSentDirectMessagesRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isSentDirectMessagesRefreshing();
@@ -426,7 +399,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean isWeeklyTrendsRefreshing() {
-
 		if (mService == null) return false;
 		try {
 			return mService.isWeeklyTrendsRefreshing();
@@ -438,7 +410,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int reportSpam(long account_id, long user_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.reportSpam(account_id, user_id);
@@ -450,7 +421,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int retweetStatus(long account_id, long status_id) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.retweetStatus(account_id, status_id);
@@ -462,7 +432,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int sendDirectMessage(long account_id, String screen_name, long user_id, String message) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.sendDirectMessage(account_id, screen_name, user_id, message);
@@ -474,7 +443,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public void shutdownService() {
-
 		if (mService == null) return;
 		try {
 			mService.shutdownService();
@@ -486,7 +454,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public boolean startAutoRefresh() {
-
 		if (mService == null) return false;
 		try {
 			return mService.startAutoRefresh();
@@ -498,7 +465,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public void stopAutoRefresh() {
-
 		if (mService == null) return;
 		try {
 			mService.stopAutoRefresh();
@@ -521,7 +487,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int updateProfile(long account_id, String name, String url, String location, String description) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.updateProfile(account_id, name, url, location, description);
@@ -533,7 +498,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int updateProfileImage(long account_id, Uri image_uri, boolean delete_image) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.updateProfileImage(account_id, image_uri, delete_image);
@@ -546,7 +510,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 	@Override
 	public int updateStatus(long[] account_ids, String content, Location location, Uri image_uri, long in_reply_to,
 			boolean delete_image) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.updateStatus(account_ids, content, location, image_uri, in_reply_to, delete_image);
@@ -558,7 +521,6 @@ public final class ServiceInterface implements Constants, ITwidereService {
 
 	@Override
 	public int updateUserListDetails(long account_id, int list_id, boolean is_public, String name, String description) {
-
 		if (mService == null) return -1;
 		try {
 			return mService.updateUserListDetails(account_id, list_id, is_public, name, description);
@@ -568,6 +530,16 @@ public final class ServiceInterface implements Constants, ITwidereService {
 		return -1;
 	}
 
+	public void waitForService() {
+		while (mService == null) {
+			try {
+				Thread.sleep(100L);
+			} catch (final InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	public static ServiceInterface getInstance(Application application) {
 		if (sInstance == null || !sInstance.test()) {
 			sInstance = new ServiceInterface(application);
@@ -575,64 +547,4 @@ public final class ServiceInterface implements Constants, ITwidereService {
 		return sInstance;
 	}
 
-	public static class ServiceToken {
-
-		final ContextWrapper wrapped_context;
-
-		ServiceToken(ContextWrapper context) {
-
-			wrapped_context = context;
-		}
-	}
-
-	public static final class ServiceUtils {
-
-		private static HashMap<Context, ServiceBinder> sConnectionMap = new HashMap<Context, ServiceBinder>();
-
-		public static ServiceToken bindToService(Context context) {
-
-			return bindToService(context, null);
-		}
-
-		public static ServiceToken bindToService(Context context, ServiceConnection callback) {
-
-			final Intent intent = new Intent(INTENT_ACTION_SERVICE);
-			final ContextWrapper cw = new ContextWrapper(context);
-			cw.startService(intent);
-			final ServiceBinder sb = new ServiceBinder(callback);
-			if (cw.bindService(intent, sb, 0)) {
-				sConnectionMap.put(cw, sb);
-				return new ServiceToken(cw);
-			}
-			Log.e(LOGTAG, "Failed to bind to service");
-			return null;
-		}
-
-		private static class ServiceBinder implements ServiceConnection {
-
-			private ServiceConnection mCallback;
-
-			public ServiceBinder(ServiceConnection callback) {
-
-				mCallback = callback;
-			}
-
-			@Override
-			public void onServiceConnected(ComponentName className, android.os.IBinder service) {
-
-				if (mCallback != null) {
-					mCallback.onServiceConnected(className, service);
-				}
-			}
-
-			@Override
-			public void onServiceDisconnected(ComponentName className) {
-
-				if (mCallback != null) {
-					mCallback.onServiceDisconnected(className);
-				}
-			}
-		}
-
-	}
 }
